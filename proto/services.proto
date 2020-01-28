@@ -1,0 +1,36 @@
+/**
+ * jonathan.lareau@gmail.com
+ *
+ * To (re)generate proto :
+ * protoc --go_out=plugins=grpc:. *.proto
+ * In this folder (proto)
+ *
+ * To get protoc : https://github.com/protocolbuffers/protobuf/releases
+ *
+ **/
+
+syntax = "proto3";
+
+package pb;
+
+message SayHiRequest {
+    string requestMsg = 1;
+}
+
+message SayHelloResponse {
+    string responseMsg = 1;
+}
+
+message SayByeResponse {
+    string responseMsg = 1;
+}
+
+service SayHelloService {
+    rpc Compute (SayHiRequest) returns (SayHelloResponse) {
+    }
+}
+
+service SayByeService {
+    rpc Compute (SayHiRequest) returns (SayByeResponse) {
+    }
+}

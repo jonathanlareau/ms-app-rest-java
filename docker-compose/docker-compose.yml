@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  client:
+    build: 
+      context: ../client/
+      dockerfile: Dockerfile
+    container_name: go-client
+    restart: always
+    ports:
+      - '8080:8080'
+    networks:
+      somenetwork:
+        aliases:
+         - api-service
+  server:
+    build: 
+      context: ../server/
+      dockerfile: Dockerfile
+    container_name: go-server
+    restart: always
+    ports:
+      - '3000:3000'
+    networks:
+      somenetwork:
+        aliases:
+         - sayhello-service
+  angular:
+    build: 
+      context: ../angular/
+      dockerfile: Dockerfile
+    container_name: go-angular
+    restart: always
+    ports:
+      - '4200:4200'
+    networks:
+      somenetwork:
+    volumes:
+     - /mnt/data/environment.ts:/app/src/environments/environment.ts
+     #- ./environment.ts:/app/src/environments/environment.ts
+networks:
+  somenetwork:

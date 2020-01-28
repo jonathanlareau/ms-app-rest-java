@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  labels:
+    app: sayhello
+spec:
+  selector:
+    matchLabels:
+      app: sayhello
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sayhello
+    spec:
+      containers:
+      - name: sayhello
+        image: jonathanlareau/simple-server-go:latest
+        ports:
+        - name: grcp
+          containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sayhello-service
+spec:
+  selector:
+    app: sayhello
+  ports:
+    - port: 3000
+      targetPort: 3000

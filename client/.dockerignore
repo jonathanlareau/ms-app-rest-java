@@ -1,0 +1,11 @@
+.git
+.ipynb_checkpoints/*
+Dockerfile
+.DS_Store
+.gitignore
+README.md
+env.*
+*.exe
+*.csv
+/tmp/*
+.dockerignore
