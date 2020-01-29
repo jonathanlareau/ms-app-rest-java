@@ -1,5 +1,5 @@
-# Microservices application with Java, Rest And Spring Boot
-The purpose of this project is to demonstrate the use of **Go** language to create a simple Microservices application.
+# Microservices application with Java, Rest and Spring Boot
+The purpose of this project is to demonstrate the use of **Spring Boot** and Http Rest service to create a simple Microservices application.
 # Flow
 ```mermaid
 graph LR
