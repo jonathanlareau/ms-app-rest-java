@@ -36,5 +36,13 @@ After open the browser to: http://192.168.99.100:4200/sayhello
 - Forward the port: kubectl port-foward my-angular-pod 4200:4200
 ### Test
 After open the browser to: http://localhost:4200/sayhello
+# Build Docker
+- docker build -t jonathanlareau/spring-boot-java-http-client --build-arg JAR_FILE=./build/libs/client-0.0.1-SNAPSHOT.war .
+- docker build -t jonathanlareau/spring-boot-java-http-server --build-arg JAR_FILE=./build/libs/server-0.0.1-SNAPSHOT.war .
+- docker build -t jonathanlareau/simple-angular-hello .
+- docker login
+- docker push jonathanlareau/spring-boot-java-http-client
+- docker push jonathanlareau/spring-boot-java-http-server
+- docker push jonathanlareau/simple-angular-hello
 # ToDo
 - Setup a Nginx Ingress

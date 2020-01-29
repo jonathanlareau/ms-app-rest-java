@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sayhello
-        image: jonathanlareau/simple-server-go:latest
+        image: jonathanlareau/spring-boot-java-http-server:latest
         ports:
         - name: grcp
           containerPort: 3000

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: api-service
-          image: jonathanlareau/simple-client-go:latest
+          image: jonathanlareau/spring-boot-java-http-client:latest
           ports:
             - name: client
               containerPort: 8080
