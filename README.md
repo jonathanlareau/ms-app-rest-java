@@ -11,10 +11,14 @@ You can run this application in three way:
 - In starting the three apps individually.
 - Using Docker-compose included.
 - Minikube with de yaml deployment files in k8s
+## Configurations
+- Enter these lines in the hosts file
+127.0.0.1 api-service
+127.0.0.1 sayhello-service
 ## Individual start
 ### Steps
-- In the folder server : go run main.do
-- In the folder client : go run main.do
+- In the folder server : gradle bootRun
+- In the folder client : gradle bootRun
 - In the folder angular : ng serve --open
 ### Test
 After open the browser to: http://localhost:4200/sayhello

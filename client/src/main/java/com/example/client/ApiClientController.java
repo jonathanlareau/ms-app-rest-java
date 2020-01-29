@@ -22,7 +22,7 @@ public class ApiClientController {
     Map<String, String> uriVariables = new HashMap<>();
     uriVariables.put("msg", msg + " resttemplate ");
 
-    ResponseEntity<String> responseEntity = new RestTemplate().getForEntity("http://localhost:3000/api/sayhello/{msg}",
+    ResponseEntity<String> responseEntity = new RestTemplate().getForEntity("http://sayhello-service:3000/api/sayhello/{msg}",
         String.class, uriVariables);
 
     String response = responseEntity.getBody();

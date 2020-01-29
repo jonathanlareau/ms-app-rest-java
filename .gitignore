@@ -8,6 +8,8 @@
 /bazel-out
 *.exe
 .vscode/
+*.class
+*/bin
 
 # dependencies
 /node_modules

@@ -4,7 +4,9 @@ services:
     build: 
       context: ../client/
       dockerfile: Dockerfile
-    container_name: go-client
+      args:
+        JAR_FILE: ./build/libs/client-0.0.1-SNAPSHOT.war
+    container_name: spring-boot-client
     restart: always
     ports:
       - '8080:8080'
@@ -16,7 +18,9 @@ services:
     build: 
       context: ../server/
       dockerfile: Dockerfile
-    container_name: go-server
+      args:
+        JAR_FILE: ./build/libs/server-0.0.1-SNAPSHOT.war
+    container_name: spring-boot-server
     restart: always
     ports:
       - '3000:3000'
@@ -28,7 +32,7 @@ services:
     build: 
       context: ../angular/
       dockerfile: Dockerfile
-    container_name: go-angular
+    container_name: web-angular
     restart: always
     ports:
       - '4200:4200'

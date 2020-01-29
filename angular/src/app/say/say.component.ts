@@ -15,7 +15,7 @@ export class SayComponent implements OnInit {
     console.log("ngOnInit Begin");
     this.apiService.getMsg().subscribe((data)=>{
       console.log("data=" + data);
-      this.msg = data;
+      this.msg = data["Msg"];
     });
   }
 }
